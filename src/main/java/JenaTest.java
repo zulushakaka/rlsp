@@ -1,4 +1,3 @@
-import jdk.nashorn.internal.runtime.options.Option;
 import org.apache.jena.query.ReadWrite;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.tdb2.TDB2Factory;
@@ -14,6 +13,8 @@ public class JenaTest {
 
         String directory = "/home/xianyang/kb/d-fb/";
         Dataset dataset = TDB2Factory.connectDataset(directory);
+
+        System.out.println("Empty: " + dataset.isEmpty());
 
         dataset.begin(ReadWrite.READ);
         Model model = dataset.getDefaultModel();
