@@ -14,9 +14,8 @@ public class JenaTest {
         String directory = "/home/xianyang/kb/d-fb/";
         Dataset dataset = TDB2Factory.connectDataset(directory);
 
-        System.out.println("Empty: " + dataset.isEmpty());
-
         dataset.begin(ReadWrite.READ);
+        System.out.println("Empty: " + dataset.isEmpty());
         Model model = dataset.getDefaultModel();
 
         String jb = "<http://rdf.freebase.com/ns/m.06w2sn5>";
