@@ -19,16 +19,17 @@ public class JenaTest {
         System.out.println("Empty: " + dataset.isEmpty());
         Model model = dataset.getDefaultModel();
         System.out.println("Empty: " + model.isEmpty());
-        /*
+
         String jb = "http://rdf.freebase.com/ns/m.06w2sn5";
         Resource JB = model.getResource(jb);
         StmtIterator it = JB.listProperties();
         while (it.hasNext()) {
             System.out.println("***");
-            System.out.println(it.next().getString());
+            Statement stmt = it.nextStatement();
+            System.out.println(stmt.getPredicate() + "\t" + stmt.getObject());
         }
-        */
-        StmtIterator it = model.listStatements();
+
+        it = model.listStatements();
         for (int i = 0; i < 100; ++i) {
             if (it.hasNext()) {
                 Statement stmt = it.nextStatement();
