@@ -16,7 +16,11 @@ public class JenaTest {
         Model model = dataset.getDefaultModel();
 
         String jb = "<http://rdf.freebase.com/ns/m.06w2sn5>";
-        model.getResource(jb);
+        Resource JB = model.getResource(jb);
+        StmtIterator it = JB.listProperties();
+        while (it.hasNext()) {
+            System.out.println(it.next().getString());
+        }
 
         dataset.end();
 
