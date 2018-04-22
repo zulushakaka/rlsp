@@ -20,7 +20,7 @@ public class JenaTest {
         Model model = dataset.getDefaultModel();
         System.out.println("Empty: " + model.isEmpty());
 
-        String jb = "<http://rdf.freebase.com/ns/m.06w2sn5>";
+        String jb = "http://rdf.freebase.com/ns/m.06w2sn5";
         Resource JB = model.getResource(jb);
         StmtIterator it = JB.listProperties();
         while (it.hasNext()) {
