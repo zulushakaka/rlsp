@@ -1,7 +1,10 @@
+import jdk.nashorn.internal.runtime.options.Option;
 import org.apache.jena.query.ReadWrite;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.tdb2.TDB2Factory;
 import org.apache.jena.query.Dataset;
+
+import java.util.Optional;
 
 
 public class JenaTest {
@@ -19,9 +22,18 @@ public class JenaTest {
         Resource JB = model.getResource(jb);
         StmtIterator it = JB.listProperties();
         while (it.hasNext()) {
+            System.out.println("***");
             System.out.println(it.next().getString());
         }
+        /*
+        Optional<String> nullStr = Optional.empty();
+        Optional<Property> nullProp = Optional.empty();
 
+        it = model.listStatements(JB, nullProp.get(), nullStr.get());
+        while (it.hasNext()) {
+            System.out.println(it.next().getString());
+        }
+        */
         dataset.end();
 
         System.out.println("Test Over!");
