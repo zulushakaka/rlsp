@@ -16,7 +16,7 @@ public class JenaTest {
 
         dataset.begin(ReadWrite.READ);
         System.out.println("Empty: " + dataset.isEmpty());
-        Model model = dataset.getNamedModel("freebase");
+        Model model = dataset.getUnionModel();
         System.out.println("Empty: " + model.isEmpty());
 
         String jb = "<http://rdf.freebase.com/ns/m.06w2sn5>";
