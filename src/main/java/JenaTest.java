@@ -7,6 +7,8 @@ import org.apache.jena.query.Dataset;
 public class JenaTest {
 
     public static void main(String[] args) {
+        System.out.println("Test Begin!");
+
         String directory = "/home/xianyang/kb/d-fb/";
         Dataset dataset = TDB2Factory.connectDataset(directory);
 
