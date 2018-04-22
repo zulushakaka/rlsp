@@ -1,6 +1,7 @@
 import org.apache.jena.query.ReadWrite;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.tdb2.TDB2Factory;
+import org.apache.jena.tdb.TDBFactory;
 import org.apache.jena.query.Dataset;
 
 import java.util.Optional;
@@ -12,7 +13,7 @@ public class JenaTest {
         System.out.println("Test Begin!");
 
         String directory = "/home/xianyang/kb/d-fb/";
-        Dataset dataset = TDB2Factory.connectDataset(directory);
+        Dataset dataset = TDBFactory.createDataset(directory);
 
         dataset.begin(ReadWrite.READ);
         System.out.println("Empty: " + dataset.isEmpty());
