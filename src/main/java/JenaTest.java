@@ -25,6 +25,13 @@ public class JenaTest {
             System.out.println("***");
             System.out.println(it.next().getString());
         }
+
+        it = model.listStatements();
+        for (int i = 0; i < 100; ++i) {
+            String str = it.next().getString();
+            System.out.println(str);
+        }
+
         /*
         Optional<String> nullStr = Optional.empty();
         Optional<Property> nullProp = Optional.empty();
