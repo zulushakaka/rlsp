@@ -17,6 +17,8 @@ public class JenaTest {
         model.getResource(jb);
 
         dataset.end();
+
+        System.out.println("Test Over!");
     }
 
 }
