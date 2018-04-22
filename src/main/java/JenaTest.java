@@ -28,8 +28,9 @@ public class JenaTest {
 
         it = model.listStatements();
         for (int i = 0; i < 100; ++i) {
-            String str = it.next().getString();
-            System.out.println(str);
+            Statement stmt = it.nextStatement();
+            String subj = stmt.getSubject().getURI();
+            System.out.println(subj);
         }
 
         /*
