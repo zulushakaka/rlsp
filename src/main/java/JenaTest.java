@@ -28,9 +28,15 @@ public class JenaTest {
 
         it = model.listStatements();
         for (int i = 0; i < 100; ++i) {
-            Statement stmt = it.nextStatement();
-            String subj = stmt.getSubject().getURI();
-            System.out.println(subj);
+            if (it.hasNext()) {
+                Statement stmt = it.nextStatement();
+                String subj = stmt.getSubject().getURI();
+                System.out.println(subj);
+            }
+            else {
+                System.out.println("no stmt");
+                break;
+            }
         }
 
         /*
