@@ -34,7 +34,7 @@ public class JenaTest {
                 Statement stmt = it.nextStatement();
                 String subj = stmt.getSubject().getURI();
                 String predicate = stmt.getPredicate().getURI();
-                String obj = stmt.getPredicate().getURI();
+                String obj = stmt.getObject().toString();
                 System.out.println(subj + "\t" + predicate + "\t" + obj);
             }
             else {
