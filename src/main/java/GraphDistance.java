@@ -34,7 +34,7 @@ public class GraphDistance {
             RDPair curr = queue.removeFirst();
             Resource currResource = curr.resource;
             int currDistance = curr.distance;
-            System.out.println(curr);
+            //System.out.println(curr);
 
             if (currDistance < N) {
                 StmtIterator it = currResource.listProperties();
@@ -68,12 +68,15 @@ public class GraphDistance {
             depth = Integer.parseInt(args[0]);
         Dataset dataset = loadDataset("/home/xianyang/kb/d-fb/");
         List<List<String>> answer = getDistNNeighbours(dataset, "m.06w2sn5", depth);
+        int count = 0;
         for (List<String> layer: answer) {
+            count += layer.size();
             for (String node: layer) {
                 System.out.println(node);
             }
             System.out.println("--------------------");
         }
+        System.out.println(count + " results in total");
     }
 
 }
