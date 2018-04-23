@@ -64,7 +64,7 @@ public class GraphDistance {
 
     public static void main(String[] args) throws Exception {
         Dataset dataset = loadDataset("/home/xianyang/kb/d-fb/");
-        List<List<String>> answer = getDistNNeighbours(dataset, "m.06w2sn5", 3);
+        List<List<String>> answer = getDistNNeighbours(dataset, "m.06w2sn5", 2);
         for (List<String> layer: answer) {
             for (String node: layer) {
                 System.out.println(node);
