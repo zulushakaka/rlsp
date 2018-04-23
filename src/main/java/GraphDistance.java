@@ -41,9 +41,12 @@ public class GraphDistance {
                     Statement stmt = it.nextStatement();
                     String neighbour = stmt.getObject().toString();
                     if (! visited.contains(neighbour)) {
-                        queue.addLast(new RDPair(model.getResource(neighbour), currDistance + 1));
-                        answer.get(currDistance).add(neighbour);
-                        visited.add(neighbour);
+                        Resource neighborResource = model.getResource(neighbour);
+                        if (neighborResource != null) {
+                            queue.addLast(new RDPair(neighborResource, currDistance + 1));
+                            answer.get(currDistance).add(neighbour);
+                            visited.add(neighbour);
+                        }
                     }
                 }
             }
