@@ -34,6 +34,7 @@ public class GraphDistance {
             RDPair curr = queue.removeFirst();
             Resource currResource = curr.resource;
             int currDistance = curr.distance;
+            System.out.println(curr);
 
             if (currDistance < N) {
                 StmtIterator it = currResource.listProperties();
@@ -58,8 +59,7 @@ public class GraphDistance {
     }
 
     public static Dataset loadDataset(String dir) {
-        Dataset dataset = TDBFactory.createDataset(dir);
-        return dataset;
+        return TDBFactory.createDataset(dir);
     }
 
     public static void main(String[] args) throws Exception {
@@ -80,7 +80,11 @@ class RDPair {
     int distance;
 
     RDPair(Resource resource, int distance) {
-        resource = resource;
-        distance = distance;
+        this.resource = resource;
+        this.distance = distance;
+    }
+
+    public String toString() {
+        return resource.toString() + " " + distance;
     }
 }
